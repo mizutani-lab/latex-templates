@@ -1,0 +1,14 @@
+.DS_Store
+.vscode/
+dist/
+.ipynb_checkpoints
+
+*.aux
+*.bbl
+*.blg
+*.gz
+*.log
+*.out
+*.pdf
+*.vtc
+*.fdb_latexmk

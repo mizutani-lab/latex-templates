@@ -1,0 +1,103 @@
+\section{Introduction}
+
+Here is how to include dummy text.
+\lipsum[1]
+\ExampleComment{Here is an example comment.}
+\ExampleCommentInline{Here is an example inline comment.}
+
+Here we define color-blind friendly colors:
+\textcolor{kSky}{Sky.}
+\textcolor{kBlue}{Blue.}
+\textcolor{kGreen}{Green.}
+\textcolor{kRed}{Red.}
+\textcolor{kPurple}{Purple.}
+\textcolor{kYellow}{Yellow.}
+\textcolor{kOrange}{Orange.}
+\textcolor{kGray}{Gray.}
+\textcolor{kLightGray}{LightGray.}
+\textcolor{kDarkGray}{DarkGray.}
+
+Here is a problem box.
+
+\probbox{Problem Name}{Description.}{Description.}
+
+%-------------------------------------------------------------------------------
+%    1
+%-------------------------------------------------------------------------------
+\subsection{Question 1}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Consider the following algorithm.
+
+  \begin{minipage}{\linewidth}
+    \begin{algorithm}[H]
+      \SetAlgoLined
+      \KwData{this text}
+      \KwResult{how to write algorithm with \LaTeX2e }
+      initialization\;
+      \While{not at end of this document}{
+      read current\;
+      \eIf{understand}{
+      go to next section\;
+      current section becomes this one\;
+      }{
+      go back to the beginning of current section\;
+      }
+      }
+      \caption{How to write algorithms}
+    \end{algorithm}
+  \end{minipage}
+
+Explain the algorithm.
+
+  \item Running time analysis.
+\end{enumerate}
+
+%-------------------------------------------------------------------------------
+%    2
+%-------------------------------------------------------------------------------
+\subsection{Question 2}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Your answer.
+  \item Consider the following algorithm.
+
+  \begin{minipage}{\linewidth}
+    \begin{algorithm}[H]
+      \SetKwData{Left}{left}
+      \SetKwData{This}{this}
+      \SetKwData{Up}{up}
+
+      \SetKwFunction{Union}{Union}
+      \SetKwFunction{FindCompress}{FindCompress}
+
+      \KwInput{A bitmap $Im$ of size $w\times l$}
+      \KwOutput{A partition of the bitmap}
+      \BlankLine
+      \emph{special treatment of the first line}\;
+      \For{$i \gets 2$ \KwTo $l$}{
+      \emph{special treatment of the first element of line $i$}\;
+      \For{$j \gets 2$ \KwTo $w$}{\label{forins}
+      \Left $\gets$ \FindCompress{$Im[i,j-1]$}\;
+      \Up $\gets$ \FindCompress{$Im[i-1,]$}\;
+      \This $\gets$ \FindCompress{$Im[i,j]$}\;
+      \If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
+      \lIf{\Left $<$ \This}{\Union{\Left,\This}}
+      \lElse{\Union{\This, \Left}}
+      }
+      \If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
+      \lIf{\Up $<$ \This}{\Union{\Up, \This}}
+      \tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
+      \lElse{\Union{\This, \Up}}\tcp*[h]{\This linked to \Up}\label{lelse}
+      }
+      }
+      \lForEach{element $e$ of the line $i$}{\FindCompress{p}}
+      }
+      \caption{disjoint decomposition}\label{algo_disjdecomp}
+    \end{algorithm}
+  \end{minipage}
+    
+  Running time analysis.
+
+  \item Your answer.
+\end{enumerate}

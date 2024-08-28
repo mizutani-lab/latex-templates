@@ -1,0 +1,24 @@
+%===============================================================================
+%  Defines a macro (\prob) for problem names
+%  and an environment (probbox) for problem boxes,
+%  along with pre-defined keywords (\Input and \Prob).
+%===============================================================================
+
+% Problem style
+\newcommand{\prob}[1]{\textnormal{\textsc{#1}}\xspace}
+
+% Problem box
+\newcommand{\probbox} [3] {
+    \vspace{\dimexpr\parskip+1.35ex}
+    \noindent
+    \begin{tikzpicture}
+        \node[draw=black!40, rounded corners, inner sep=2ex] (content) {
+            \begin{tabularx} {\dimexpr\columnwidth-4ex-0.3pt} {l X}
+                \textbf{Input:} & #2\\
+                \textbf{Problem:} & #3\\
+            \end{tabularx}
+        };
+
+        \node[inner sep=3pt, fill=white, anchor=north west] at ($(content.north west) + (2ex, 1.35ex)$) {\prob{#1}};
+    \end{tikzpicture}%
+}

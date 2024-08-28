@@ -1,0 +1,97 @@
+%===============================================================================
+%   Additional Libraries
+%===============================================================================
+
+%-------------------------------------------------------------------------------
+% Color-blind friendly colors
+%-------------------------------------------------------------------------------
+\usepackage[dvipsnames]{xcolor}
+\definecolor{kOrange} {RGB} {230, 159, 0}
+\definecolor{kSky} {RGB} {86, 180, 233}
+\definecolor{kGreen} {RGB} {0, 158, 115}
+\definecolor{kYellow} {RGB} {240, 228, 66}
+\definecolor{kBlue} {RGB} {0, 114, 178}
+% \definecolor{kRed} {RGB} {213, 94, 0}
+\definecolor{kRed} {RGB} {220, 51, 17}
+\definecolor{kPurple} {RGB} {204, 121, 167}
+\definecolor{kGray} {RGB} {187, 187, 187}
+\definecolor{kLightGray} {RGB} {221, 221, 221}
+\definecolor{kDarkGray} {RGB} {85, 85, 85}
+
+%-------------------------------------------------------------------------------
+% Basic libraries
+%-------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}  % proof environment etc.
+\usepackage{enumitem}  % adds label options to enumerate
+\usepackage{fancyhdr}  % header
+\usepackage{lastpage}  % retrieve the total number of pages
+\usepackage{xspace}
+
+\usepackage{xargs}
+\usepackage{xifthen}
+\usepackage{framed}
+\usepackage{nicefrac}
+\usepackage{adjustbox}
+\usepackage{url}
+
+\usepackage{lipsum}  % for dummy text
+\SetLipsumParListSurrounders{\begingroup\color{gray}}{\endgroup}
+\SetLipsumSentenceListSurrounders{\begingroup\color{gray}}{\endgroup}
+
+% for restatable
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+%-------------------------------------------------------------------------------
+% TODO notes
+%-------------------------------------------------------------------------------
+\setlength {\marginparwidth }{2.0cm}  % Adjust spacing if necessary
+\usepackage[backgroundcolor=white,textsize=footnotesize]{todonotes}  % TODO notes
+
+%-------------------------------------------------------------------------------
+% Algorithm library & template
+%-------------------------------------------------------------------------------
+% The algo2e option renames the algorithm environment to `algorithm2e`. This avoids
+% a name clash with the `algorithm` package loaded by the paper style.
+\usepackage[ruled, vlined, linesnumbered, nofillcomment, boxed, noend]{algorithm2e}
+\SetKwInput{KwInput}{Input}                % set the Input
+\SetKwInput{KwOutput}{Output}              % set the Output
+
+% taken from https://tex.stackexchange.com/questions/162207/algorithm2e-comment-style
+\newcommand\commentstyle[1]{\footnotesize\ttfamily\textcolor{kBlue}{#1}}
+\SetCommentSty{commentstyle}
+\DontPrintSemicolon
+
+%-------------------------------------------------------------------------------
+%  TikZ packages
+%-------------------------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows}  % customizable arrow heads with tikz
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}  % tikz curly braces
+\usetikzlibrary{math}  % for variables in tikz
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+
+%-------------------------------------------------------------------------------
+%  Additional libralies that must be loaded after tikz
+%-------------------------------------------------------------------------------
+\usepackage{hyperref}
+\usepackage{cleveref}  % must be after loading algorithm2e and hyperref
+
+\usepackage{ctable}
+\usepackage{tabularx}
+
+\usepackage{subcaption}
+\usepackage{multirow}  % for tables ACM_ACCEPTED#88
+\usepackage{makecell}  % for tables
